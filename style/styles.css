@@ -1,0 +1,133 @@
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+/* Base */
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+.container { max-width:1200px; margin:0 auto; padding:0 20px; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #ff6b35, #f7931e, #ffcd3c);
+  min-height: 100vh;
+  display:flex; align-items:center; position:relative; overflow:hidden;
+}
+.hero::before{
+  content:''; position:absolute; inset:0;
+  background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dance" patternUnits="userSpaceOnUse" width="20" height="20"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23dance)"/></svg>');
+  animation: float 20s ease-in-out infinite;
+}
+@keyframes float{
+  0%,100%{ transform:translate(0,0); }
+  25%{ transform:translate(10px,-10px); }
+  50%{ transform:translate(-5px,-20px); }
+  75%{ transform:translate(-10px,-5px); }
+}
+.hero-content{ position:relative; z-index:2; text-align:center; color:#fff; width:100%; }
+.hero h1{
+  font-family:'Bebas Neue', cursive;
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom:20px;
+  text-shadow:3px 3px 6px rgba(0,0,0,.3);
+  animation: slideInDown 1s ease-out;
+}
+.hero .subtitle{
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  margin-bottom:30px; font-weight:500;
+  text-shadow:2px 2px 4px rgba(0,0,0,.3);
+  animation: slideInUp 1s ease-out .3s both;
+}
+.cta-button{
+  display:inline-block; background:linear-gradient(45deg,#dc143c,#ff4500); color:#fff;
+  padding:18px 40px; border-radius:50px; text-decoration:none; font-weight:600; font-size:1.2rem;
+  transition:all .3s ease; text-transform:uppercase; letter-spacing:1px;
+  box-shadow:0 8px 25px rgba(220,20,60,.3);
+  animation: slideInUp 1s ease-out .6s both;
+}
+.cta-button:hover{ transform:translateY(-3px); box-shadow:0 12px 35px rgba(220,20,60,.4); }
+@keyframes slideInDown{ from{ transform:translateY(-100px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
+@keyframes slideInUp{ from{ transform:translateY(100px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
+
+/* Course Details */
+.course-details{ padding:100px 0; background:linear-gradient(180deg,#fff 0%,#fff8f0 100%); }
+.section-title{
+  font-family:'Bebas Neue', cursive;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  text-align:center; margin-bottom:50px;
+  background:linear-gradient(45deg,#ff6b35,#dc143c);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.details-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:40px; margin-bottom:60px;
+}
+.detail-card{
+  background:#fff; padding:40px; border-radius:20px; text-align:center;
+  transition:transform .3s ease; border:3px solid transparent; background-clip:padding-box;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+.detail-card:hover{ transform:translateY(-10px); box-shadow:0 20px 50px rgba(255,107,53,.2); }
+.detail-card h3{ font-family:'Bebas Neue', cursive; font-size:2rem; color:#dc143c; margin-bottom:15px; }
+.detail-card p{ font-size:1.1rem; color:#666; font-weight:500; }
+
+.highlight-box{
+  background:linear-gradient(135deg,#ff6b35,#f7931e); color:#fff;
+  padding:40px; border-radius:20px; text-align:center; margin:60px 0;
+}
+.highlight-box h3{ font-family:'Bebas Neue', cursive; font-size:2.5rem; margin-bottom:20px; }
+.highlight-box p{ font-size:1.2rem; font-weight:500; }
+
+/* Benefits */
+.benefits{ padding:100px 0; background:linear-gradient(135deg,#dc143c,#ff4500); color:#fff; }
+.benefits .section-title{ background:none; -webkit-text-fill-color:#fff; color:#fff; }
+.benefits-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
+.benefit-item{ display:flex; align-items:flex-start; gap:15px; }
+.benefit-check{
+  background:rgba(255,255,255,.2); border-radius:50%; width:30px; height:30px;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:5px;
+}
+.benefit-item p{ font-size:1.1rem; font-weight:500; }
+
+/* Learning */
+.learning{ padding:100px 0; background:#fff; }
+.learning-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
+.learning-item{
+  background:linear-gradient(135deg,#fff8f0,#ffffff);
+  padding:30px; border-radius:15px; border-left:5px solid #ff6b35; transition:transform .3s ease;
+}
+.learning-item:hover{ transform:translateX(10px); }
+.learning-item h4{ color:#dc143c; font-weight:600; margin-bottom:10px; font-size:1.1rem; }
+
+/* Testimonials */
+.testimonials{ padding:100px 0; background:linear-gradient(180deg,#fff8f0 0%,#ffebcd 100%); }
+.testimonial-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(350px,1fr)); gap:30px; }
+.testimonial-placeholder{
+  background:#fff; border-radius:20px; padding:40px; text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.1); border:2px dashed #ff6b35;
+}
+.testimonial-placeholder h4{ color:#dc143c; font-size:1.5rem; margin-bottom:20px; font-family:'Bebas Neue', cursive; }
+.testimonial-placeholder p{ color:#666; font-style:italic; }
+
+/* Final CTA */
+.final-cta{ padding:100px 0; background:linear-gradient(135deg,#ff6b35,#dc143c); color:#fff; text-align:center; }
+.final-cta h2{ font-family:'Bebas Neue', cursive; font-size:clamp(2rem,5vw,3.5rem); margin-bottom:30px; }
+.final-cta p{ font-size:1.3rem; margin-bottom:40px; font-weight:500; }
+.price-highlight{
+  background:rgba(255,255,255,.2); padding:20px 40px; border-radius:15px; display:inline-block; margin-bottom:40px;
+}
+.price-highlight .price{ font-family:'Bebas Neue', cursive; font-size:3rem; color:#ffcd3c; }
+
+/* Thank you */
+.thankyou{ min-height:100vh; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#ff6b35,#f7931e,#ffcd3c); text-align:center; color:#fff; }
+.thankyou .container{ max-width:800px; }
+.thankyou h1{ font-family:'Bebas Neue', cursive; font-size:clamp(3rem,8vw,6rem); margin-bottom:20px; text-shadow:3px 3px 6px rgba(0,0,0,.3); }
+.thankyou .subtitle{ font-size:clamp(1.2rem,3vw,1.8rem); margin-bottom:30px; font-weight:500; text-shadow:2px 2px 4px rgba(0,0,0,.3); }
+
+/* Responsive */
+@media (max-width:768px){
+  .details-grid, .benefits-grid, .learning-grid, .testimonial-grid { grid-template-columns:1fr; }
+}
