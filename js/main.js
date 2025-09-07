@@ -1,4 +1,3 @@
-// Placeholder (si luego quieres validar formularios, tracking, etc.)
 document.addEventListener('DOMContentLoaded', () => {
-  // console.log('Project Baila landing loaded');
+  // Aquí puedes añadir tracking, validaciones, etc.
 });
