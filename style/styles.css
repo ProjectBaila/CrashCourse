@@ -43,4 +43,85 @@ img{max-width:100%;display:block}
   animation:slideInUp 1s ease-out .6s both
 }
 .cta-button:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(220,20,60,.4)}
-@keyfr
+@keyframes slideInDown{from{transform:translateY(-100px);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes slideInUp{from{transform:translateY(100px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+/* ===== Section Title ===== */
+.section-title{
+  font-family:'Bebas Neue',cursive;font-size:clamp(2.5rem,6vw,4rem);text-align:center;margin-bottom:50px;
+  background:linear-gradient(45deg,#ff6b35,#dc143c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
+}
+
+/* ===== Course Details ===== */
+.course-details{padding:100px 0;background:linear-gradient(180deg,#fff 0%,#fff8f0 100%)}
+.details-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:40px;margin-bottom:60px
+}
+.detail-card{
+  background:#fff;padding:40px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.1);
+  text-align:center;transition:transform .3s,box-shadow .3s;border:3px solid transparent;background-clip:padding-box
+}
+.detail-card:hover{transform:translateY(-10px);box-shadow:0 20px 50px rgba(255,107,53,.2)}
+.detail-card h3{font-family:'Bebas Neue',cursive;font-size:2rem;color:#dc143c;margin-bottom:15px}
+.detail-card p{font-size:1.1rem;color:#666;font-weight:500}
+.highlight-box{
+  background:linear-gradient(135deg,#ff6b35,#f7931e);color:#fff;padding:40px;border-radius:20px;text-align:center;margin:60px 0
+}
+.highlight-box h3{font-family:'Bebas Neue',cursive;font-size:2.5rem;margin-bottom:20px}
+.highlight-box p{font-size:1.2rem;font-weight:500}
+
+/* ===== Benefits ===== */
+.benefits{padding:100px 0;background:linear-gradient(135deg,#dc143c,#ff4500);color:#fff}
+.benefits .section-title{-webkit-text-fill-color:#fff;background:none;color:#fff}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.benefit-item{display:flex;align-items:flex-start;gap:15px}
+.benefit-check{
+  background:rgba(255,255,255,.2);border-radius:50%;width:30px;height:30px;display:flex;
+  align-items:center;justify-content:center;flex-shrink:0;margin-top:5px
+}
+.benefit-item p{font-size:1.1rem;font-weight:500}
+
+/* ===== Learning ===== */
+.learning{padding:100px 0;background:#fff}
+.learning-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.learning-item{
+  background:linear-gradient(135deg,#fff8f0,#fff);padding:30px;border-radius:15px;border-left:5px solid #ff6b35;transition:transform .3s
+}
+.learning-item:hover{transform:translateX(10px)}
+.learning-item h4{color:#dc143c;font-weight:600;margin-bottom:10px;font-size:1.1rem}
+
+/* ===== Testimonials (videos 3x, 16:9) ===== */
+.testimonials{padding:100px 0;background:linear-gradient(180deg,#fff8f0 0%,#ffebcd 100%)}
+.video-grid{display:grid;gap:30px;grid-template-columns:repeat(3,1fr)}
+@media(max-width:1024px){.video-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.video-grid{grid-template-columns:1fr}}
+.video-card{background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.1);padding:16px}
+.video-wrap{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#000}
+.video-wrap iframe,.video-wrap video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-caption{text-align:center;margin-top:10px;color:#555;font-size:.95rem}
+
+/* ===== Final CTA ===== */
+.final-cta{padding:100px 0;background:linear-gradient(135deg,#ff6b35,#dc143c);color:#fff;text-align:center}
+.final-cta h2{font-family:'Bebas Neue',cursive;font-size:clamp(2rem,5vw,3.5rem);margin-bottom:30px}
+.final-cta p{font-size:1.3rem;margin-bottom:40px;font-weight:500}
+.price-highlight{background:rgba(255,255,255,.2);padding:20px 40px;border-radius:15px;display:inline-block;margin-bottom:40px}
+.price{font-family:'Bebas Neue',cursive;font-size:3rem;color:#ffcd3c}
+
+/* ===== Thank You ===== */
+.thankyou{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+  background:linear-gradient(135deg,#ff6b35,#f7931e,#ffcd3c)
+}
+.thankyou .container{max-width:800px}
+.thankyou .logo{height:72px;margin:0 auto 18px}
+.thankyou h1{
+  font-family:'Bebas Neue',cursive;font-size:clamp(3rem,8vw,6rem);margin-bottom:18px;text-shadow:3px 3px 6px rgba(0,0,0,.3)
+}
+.thankyou .subtitle{font-size:clamp(1.2rem,3vw,1.8rem);margin-bottom:28px;font-weight:500;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
+
+/* ===== Responsive tweaks ===== */
+@media(max-width:768px){
+  .details-grid,.benefits-grid,.learning-grid{grid-template-columns:1fr}
+  .logo{height:48px}
+}
